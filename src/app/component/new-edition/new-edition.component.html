@@ -1,0 +1,12 @@
+<h1>Create New Edition</h1>
+<div style="display: flex; flex-direction: column; width: 230px;">
+  <label for="title">Title : </label>
+  <input type="text" id="title" [(ngModel)]="edition.title" required/>
+
+  <label for="urlLogo">Url logo : </label>
+  <input type="text" id="urlLogo" [(ngModel)]="edition.urlLogo"/>
+</div>
+
+  <img *ngIf="edition.urlLogo" src="{{edition.urlLogo}}"/>
+
+  <button type="button" (click)="createEdition()">Create</button>
