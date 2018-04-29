@@ -12,12 +12,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NewCardComponent implements OnInit {
 
-  card = new Card();
+  card: Card;
   types: any[];
   rarities: any[];
   editions: Edition[];
   id: number;
   edition: Edition;
+  cardId: number;
 
   constructor(private editionService: EditionService,
       private cardService: CardService,
@@ -28,14 +29,30 @@ export class NewCardComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
+      this.cardId = params['cardId'];
+
+      if (this.cardId) {
+        this.cardService.getCard(this.cardId).subscribe(response => {
+          this.card = <any>response;
+        });
+      } else {
+        this.card = new Card();
+      }
+
     this.cardService.getTypes().subscribe(response => {
       this.types = <any>response;
-      this.card.type = this.types[0].id;
+
+      if (!this.cardId) {
+        this.card.type = this.types[0].id;
+      }
     });
 
     this.cardService.getRarities().subscribe(response => {
       this.rarities = <any>response;
-      this.card.rarity = this.rarities[0].id;
+
+      if (!this.cardId) {
+        this.card.rarity = this.rarities[0].id;
+      }
     });
 
     this.editionService.getEditions().subscribe(response => {
@@ -44,11 +61,13 @@ export class NewCardComponent implements OnInit {
         const editionIndex = this.editions.findIndex(e => e.id == this.id);
         this.edition = this.editions[editionIndex];
         this.card.editionId = this.edition.id;
+      } else if (this.cardId) {
+        const editionIndex = this.editions.findIndex(e => e.id == this.card.editionId);
+        this.edition = this.editions[editionIndex];
       } else {
         this.card.editionId = this.editions[0].id;
       }
     });
-
   });
   }
 

@@ -20,6 +20,7 @@ const appRoutes: Routes = [
   {  path: 'edition/:id', component: EditionDetailsComponent},
   { path: 'card', component: CardComponent },
   {  path: 'card/new/:id', component: NewCardComponent},
+  {  path: 'card/update/:cardId', component: NewCardComponent},
   {  path: 'card/new', component: NewCardComponent},
   {  path: 'card/:id', component: CardDetailsComponent}
 ];

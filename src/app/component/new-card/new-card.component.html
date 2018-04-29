@@ -63,4 +63,5 @@
 
   <img *ngIf="card.urlImage" src="{{card.urlImage}}"/>
 
-  <button type="button" (click)="createCard()">Create</button>
+  <button type="button" *ngIf="!cardId" (click)="createCard()">Create</button>
+  <button type="button" *ngIf="cardId" (click)="createCard()">Update</button>
