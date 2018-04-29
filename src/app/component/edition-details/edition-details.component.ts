@@ -15,14 +15,15 @@ export class EditionDetailsComponent implements OnInit {
   private id: number;
 
   constructor(private editionService: EditionService, private activatedRoute: ActivatedRoute, private router: Router) {
-    activatedRoute.params.subscribe(params => {
-      this.id = params['id'];
-    });
+
    }
 
   ngOnInit() {
-    this.editionService.getEdition(this.id).subscribe(response => {
-      this.edition = <any>response;
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+      this.editionService.getEdition(this.id).subscribe(response => {
+        this.edition = <any>response;
+      });
     });
   }
 

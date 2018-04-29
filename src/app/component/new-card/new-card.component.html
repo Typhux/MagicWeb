@@ -1,0 +1,66 @@
+<h1>Create New Card</h1>
+<div style="display: flex; flex-direction: column; width: 230px;">
+
+    <label for="edition">Edition : </label>
+    <select id="edition" [(ngModel)]="card.editionId" *ngIf="!edition">
+      <option *ngFor="let edition of editions" value="{{edition.id}}">{{edition.title}}</option>
+    </select>
+
+    <span *ngIf="edition">{{edition.title}}</span>
+
+  <label for="title">Title : </label>
+  <input type="text" id="title" [(ngModel)]="card.title" required/>
+
+  <label for="type">Type : </label>
+  <select id="type" [(ngModel)]="card.type">
+    <option *ngFor="let type of types" value="{{type.id}}">{{type.label}}</option>
+  </select>
+
+  <label for="subType">Sub Type : </label>
+  <input type="text" id="subType" [(ngModel)]="card.subType"/>
+
+  <label for="bluemana">Blue mana : </label>
+  <input type="number" id="bluemana" [(ngModel)]="card.blueMana"/>
+
+  <label for="greenMana">Green mana : </label>
+  <input type="number" id="greenMana" [(ngModel)]="card.greenMana"/>
+
+  <label for="whiteMana">White mana : </label>
+  <input type="number" id="whiteMana" [(ngModel)]="card.whiteMana"/>
+
+  <label for="blackMana">Black mana : </label>
+  <input type="number" id="blackMana" [(ngModel)]="card.blackMana"/>
+
+  <label for="redMana">Red mana : </label>
+  <input type="number" id="redMana" [(ngModel)]="card.redMana"/>
+
+  <label for="neutralMana">Neutral mana : </label>
+  <input type="number" id="neutralMana" [(ngModel)]="card.neutralMana"/>
+
+  <label for="rarity">Rarity : </label>
+  <select id="rarity" [(ngModel)]="card.rarity">
+    <option *ngFor="let rarity of rarities" value="{{rarity.id}}">{{rarity.label}}</option>
+  </select>
+
+  <label for="mechanic">Mechanic : </label>
+  <textarea  id="mechanic" rows="4" [(ngModel)]="card.mechanic"></textarea>
+
+  <label for="codeName">Code name : </label>
+  <input type="text" id="codeName" [(ngModel)]="card.codeName"/>
+
+  <label for="power">Power : </label>
+  <input type="number" id="power" [(ngModel)]="card.power"/>
+
+  <label for="defense">Defense : </label>
+  <input type="number" id="defense" [(ngModel)]="card.defense"/>
+
+  <label for="commentary">Commentary : </label>
+  <textarea rows="4" id="commentary" [(ngModel)]="card.commentary"></textarea>
+
+  <label for="urlImage">Url image : </label>
+  <input type="text" id="urlImage" [(ngModel)]="card.urlImage"/>
+</div>
+
+  <img *ngIf="card.urlImage" src="{{card.urlImage}}"/>
+
+  <button type="button" (click)="createCard()">Create</button>

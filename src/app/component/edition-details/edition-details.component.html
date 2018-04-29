@@ -1,6 +1,15 @@
-<h1>{{edition.title}}</h1>
-<img src="{{edition.urlLogo}}"/>
+<div *ngIf="edition">
+  <h1>{{edition.title}}</h1>
+  <img src="{{edition.urlLogo}}"/>
 
-<!-- TODO ngFor Cards -->
+  <a href="card/new/{{edition.id}}">Add Card</a>
 
-<button type="button" (click)="deleteEdition()">Delete Edition</button>
+  <div *ngFor="let card of edition.cards">
+    <a href="card/{{card.id}}">
+    {{card.title}}
+    <img src="{{card.urlImage}}"/>
+    </a>
+  </div>
+
+  <button type="button" (click)="deleteEdition()">Delete Edition</button>
+</div>

@@ -1,3 +1,12 @@
-<p>
-  card works!
-</p>
+<h1>Card</h1>
+
+<a href="./card/new" style="margin-bottom: 40px; margin-top: 40px;">Add Card</a>
+
+<div *ngFor="let card of cards" style="margin-top: 40px">
+  <a href="./card/{{card.id}}">
+    {{card.title}}<br>
+    <img src="{{card.urlImage}}"/>
+  </a>
+</div>
+
+
