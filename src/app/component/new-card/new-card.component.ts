@@ -54,7 +54,11 @@ export class NewCardComponent implements OnInit {
 
   createCard() {
     this.cardService.updateCard(this.card).subscribe(() => {
+      if (this.edition) {
+        this.router.navigateByUrl('edition/' + this.edition.id);
+      } else {
       this.router.navigateByUrl('card');
+      }
     });
   }
 
