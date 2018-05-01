@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Edition } from '../../../model/edition';
-import { EditionService } from '../../service/edition.service';
+import { EditionService } from './edition.service';
 
 @Component({
   selector: 'app-edition',

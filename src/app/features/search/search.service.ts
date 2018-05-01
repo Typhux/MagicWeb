@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { QueryCard } from '../../model/queryCard';
+import { QueryCard } from '../../../model/queryCard';
 
 @Injectable()
 export class SearchService {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EditionService } from '../../service/edition.service';
-import { Edition } from '../../../model/edition';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Edition } from '../../../../model/edition';
+import { EditionService } from '../edition.service';
 
 @Component({
   selector: 'app-edition-details',

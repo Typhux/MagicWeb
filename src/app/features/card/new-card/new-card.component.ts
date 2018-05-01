@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../../../model/card';
-import { EditionService } from '../../service/edition.service';
-import { CardService } from '../../service/card.service';
-import { Edition } from '../../../model/edition';
+
 import { Router, ActivatedRoute } from '@angular/router';
+import { Card } from '../../../../model/card';
+import { Edition } from '../../../../model/edition';
+import { EditionService } from '../../edition/edition.service';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-new-card',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Edition } from '../../model/edition';
+import { Edition } from '../../../model/edition';
 
 @Injectable()
 export class EditionService {

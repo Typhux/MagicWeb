@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Edition } from '../../../model/edition';
 import { Card } from '../../../model/card';
-import { CardService } from '../../service/card.service';
-import { EditionService } from '../../service/edition.service';
-import { SearchService } from '../../service/search.service';
 import { QueryCard } from '../../../model/queryCard';
+import { EditionService } from '../edition/edition.service';
+import { CardService } from '../card/card.service';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-search',

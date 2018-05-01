@@ -5,16 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { EditionComponent } from './component/edition/edition.component';
-import { CardComponent } from './component/card/card.component';
-import { NewEditionComponent } from './component/new-edition/new-edition.component';
-import { EditionService } from './service/edition.service';
-import { EditionDetailsComponent } from './component/edition-details/edition-details.component';
-import { NewCardComponent } from './component/new-card/new-card.component';
-import { CardDetailsComponent } from './component/card-details/card-details.component';
-import { CardService } from './service/card.service';
-import { SearchComponent } from './component/search/search.component';
-import { SearchService } from './service/search.service';
+import { EditionComponent } from './features/edition/edition.component';
+import { NewEditionComponent } from './features/edition/new-edition/new-edition.component';
+import { EditionDetailsComponent } from './features/edition/edition-details/edition-details.component';
+import { CardComponent } from './features/card/card.component';
+import { NewCardComponent } from './features/card/new-card/new-card.component';
+import { SearchComponent } from './features/search/search.component';
+import { CardDetailsComponent } from './features/card/card-details/card-details.component';
+import { SearchService } from './features/search/search.service';
+import { CardService } from './features/card/card.service';
+import { EditionService } from './features/edition/edition.service';
 
 const appRoutes: Routes = [
   { path: 'edition', component: EditionComponent},
