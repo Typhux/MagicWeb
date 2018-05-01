@@ -58,17 +58,20 @@ export class NewCardComponent implements OnInit {
     this.editionService.getEditions().subscribe(response => {
       this.editions = <any>response;
       if (this.id) {
-        const editionIndex = this.editions.findIndex(e => e.id == this.id);
-        this.edition = this.editions[editionIndex];
+        this.edition = this.getEdition(this.id);
         this.card.editionId = this.edition.id;
       } else if (this.cardId) {
-        const editionIndex = this.editions.findIndex(e => e.id == this.card.editionId);
-        this.edition = this.editions[editionIndex];
+        this.edition = this.getEdition(this.id);
       } else {
         this.card.editionId = this.editions[0].id;
       }
     });
   });
+  }
+
+  private getEdition(id: number) {
+    const editionIndex = this.editions.findIndex(e => e.id == this.id);
+    return this.editions[editionIndex];
   }
 
   createCard() {

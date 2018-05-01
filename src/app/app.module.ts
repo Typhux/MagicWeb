@@ -13,6 +13,8 @@ import { EditionDetailsComponent } from './component/edition-details/edition-det
 import { NewCardComponent } from './component/new-card/new-card.component';
 import { CardDetailsComponent } from './component/card-details/card-details.component';
 import { CardService } from './service/card.service';
+import { SearchComponent } from './component/search/search.component';
+import { SearchService } from './service/search.service';
 
 const appRoutes: Routes = [
   { path: 'edition', component: EditionComponent},
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
   {  path: 'card/new/:id', component: NewCardComponent},
   {  path: 'card/update/:cardId', component: NewCardComponent},
   {  path: 'card/new', component: NewCardComponent},
-  {  path: 'card/:id', component: CardDetailsComponent}
+  {  path: 'search', component: SearchComponent},
+  {  path: 'card/:id', component: CardDetailsComponent},
 ];
 
 @NgModule({
@@ -33,7 +36,8 @@ const appRoutes: Routes = [
     NewEditionComponent,
     EditionDetailsComponent,
     NewCardComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     EditionService,
-    CardService
+    CardService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

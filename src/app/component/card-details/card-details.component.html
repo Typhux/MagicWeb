@@ -1,23 +1,25 @@
-<a href="./card/update/{{card.id}}">Update Card</a>
+<div *ngIf="card" style="margin-top: 10px;">
+  <a href="./card/update/{{card.id}}">Update Card</a>
 <button type="button" (click)="deleteCard()">Delete Card</button>
 
-<h1>{{card.title}}</h1>
-<img src="{{card.urlImage}}"/>
-{{type.label}}
-{{card.subType}}
-{{card.blueMana}}
-{{card.greenMana}}
-{{card.whiteMana}}
-{{card.blackMana}}
-{{card.redMana}}
-{{card.neutralMana}}
-{{rarity.label}}
-{{card.mechanic}}
-{{card.codeName}}
-{{card.power}}
-{{card.defense}}
-{{edition.title}}
-{{card.commentary}}
+  <h1>{{card.title}}</h1>
+  <img src="{{card.urlImage}}"/>
+  <span *ngIf="type">{{type.label}}</span>
+  {{card.subType}}
+  {{card.blueMana}}
+  {{card.greenMana}}
+  {{card.whiteMana}}
+  {{card.blackMana}}
+  {{card.redMana}}
+  {{card.neutralMana}}
+  <span *ngIf="rarity">{{rarity.label}}</span>
+  {{card.mechanic}}
+  {{card.codeName}}
+  {{card.power}}
+  {{card.defense}}
+  <span *ngIf="edition">{{edition.title}}</span>
+  {{card.commentary}}
+</div>
 
 
 

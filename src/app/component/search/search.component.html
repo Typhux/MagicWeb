@@ -1,0 +1,54 @@
+<div *ngIf="query" style="display: flex; flex-direction: column; width: 230px;">
+
+    <label for="edition">Edition : </label>
+    <select id="edition" [(ngModel)]="query.editionId" *ngIf="!edition">
+      <option *ngFor="let edition of editions" value="{{edition.id}}">{{edition.title}}</option>
+    </select>
+
+  <label for="title">Title : </label>
+  <input type="text" id="title" [(ngModel)]="query.title" required/>
+
+  <label for="type">Type : </label>
+  <select id="type" [(ngModel)]="query.type">
+    <option *ngFor="let type of types" value="{{type.id}}">{{type.label}}</option>
+  </select>
+
+  <label for="bluemana">Blue mana : </label>
+  <input type="number" id="bluemana" [(ngModel)]="query.blueMana"/>
+
+  <label for="greenMana">Green mana : </label>
+  <input type="number" id="greenMana" [(ngModel)]="query.greenMana"/>
+
+  <label for="whiteMana">White mana : </label>
+  <input type="number" id="whiteMana" [(ngModel)]="query.whiteMana"/>
+
+  <label for="blackMana">Black mana : </label>
+  <input type="number" id="blackMana" [(ngModel)]="query.blackMana"/>
+
+  <label for="redMana">Red mana : </label>
+  <input type="number" id="redMana" [(ngModel)]="query.redMana"/>
+
+  <label for="neutralMana">Neutral mana : </label>
+  <input type="number" id="neutralMana" [(ngModel)]="query.neutralMana"/>
+
+  <label for="levelCard">Level card : </label>
+  <input type="number" id="levelCard" [(ngModel)]="query.levelCard"/>
+
+  <label for="rarity">Rarity : </label>
+  <select id="rarity" [(ngModel)]="query.rarity">
+    <option *ngFor="let rarity of rarities" value="{{rarity.id}}">{{rarity.label}}</option>
+  </select>
+</div>
+
+<button (click)="search()">Search</button>
+<button (click)="reset()">Reset</button>
+
+<div *ngIf="results">
+  <span *ngIf="results.length == 0">No result !!!</span>
+</div>
+<div *ngFor="let result of results">
+  <a href="./card/{{result.id}}">
+  {{result.title}}
+  <img src="{{result.urlImage}}"/>
+</a>
+</div>

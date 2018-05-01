@@ -1,5 +1,5 @@
 <h1>Create New Card</h1>
-<div style="display: flex; flex-direction: column; width: 230px;">
+<div *ngIf="card" style="display: flex; flex-direction: column; width: 230px;">
 
     <label for="edition">Edition : </label>
     <select id="edition" [(ngModel)]="card.editionId" *ngIf="!edition">
@@ -59,9 +59,10 @@
 
   <label for="urlImage">Url image : </label>
   <input type="text" id="urlImage" [(ngModel)]="card.urlImage"/>
-</div>
+
 
   <img *ngIf="card.urlImage" src="{{card.urlImage}}"/>
+</div>
 
-  <button type="button" *ngIf="!cardId" (click)="createCard()">Create</button>
-  <button type="button" *ngIf="cardId" (click)="createCard()">Update</button>
+<button type="button" *ngIf="!cardId" (click)="createCard()">Create</button>
+<button type="button" *ngIf="cardId" (click)="createCard()">Update</button>
