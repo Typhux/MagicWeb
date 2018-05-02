@@ -15,7 +15,7 @@ export class NewEditionComponent {
 
   createEdition() {
     this.editionService.updateEdition(this.edition).subscribe(() => {
-      this.router.navigateByUrl('edition');
+      this.router.navigateByUrl('admin/edition');
     });
 
   }

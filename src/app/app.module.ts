@@ -17,15 +17,15 @@ import { CardService } from './features/card/card.service';
 import { EditionService } from './features/edition/edition.service';
 
 const appRoutes: Routes = [
-  { path: 'edition', component: EditionComponent},
-  {  path: 'edition/new', component: NewEditionComponent},
-  {  path: 'edition/:id', component: EditionDetailsComponent},
-  { path: 'card', component: CardComponent },
-  {  path: 'card/new/:id', component: NewCardComponent},
-  {  path: 'card/update/:cardId', component: NewCardComponent},
-  {  path: 'card/new', component: NewCardComponent},
-  {  path: 'search', component: SearchComponent},
-  {  path: 'card/:id', component: CardDetailsComponent},
+  { path: 'admin/edition', component: EditionComponent},
+  {  path: 'admin/edition/new', component: NewEditionComponent},
+  {  path: 'admin/edition/:id', component: EditionDetailsComponent},
+  { path: 'admin/card', component: CardComponent },
+  {  path: 'admin/card/new/:id', component: NewCardComponent},
+  {  path: 'admin/card/update/:cardId', component: NewCardComponent},
+  {  path: 'admin/card/new', component: NewCardComponent},
+  {  path: 'admin/search', component: SearchComponent},
+  {  path: 'admin/card/:id', component: CardDetailsComponent},
 ];
 
 @NgModule({

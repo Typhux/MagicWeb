@@ -13,23 +13,41 @@
     <option *ngFor="let type of types" value="{{type.id}}">{{type.label}}</option>
   </select>
 
-  <label for="bluemana">Blue mana : </label>
-  <input type="number" id="bluemana" [(ngModel)]="query.blueMana"/>
+  <label for="minbluemana">Min Blue mana : </label>
+  <input type="number" id="minbluemana" [(ngModel)]="query.minBlueMana"/>
 
-  <label for="greenMana">Green mana : </label>
-  <input type="number" id="greenMana" [(ngModel)]="query.greenMana"/>
+  <label for="maxbluemana">Max Blue mana : </label>
+  <input type="number" id="maxbluemana" [(ngModel)]="query.maxBlueMana"/>
 
-  <label for="whiteMana">White mana : </label>
-  <input type="number" id="whiteMana" [(ngModel)]="query.whiteMana"/>
+  <label for="mingreenMana">Min Green mana : </label>
+  <input type="number" id="mingreenMana" [(ngModel)]="query.minGreenMana"/>
 
-  <label for="blackMana">Black mana : </label>
-  <input type="number" id="blackMana" [(ngModel)]="query.blackMana"/>
+  <label for="maxgreenMana">Max Green mana : </label>
+  <input type="number" id="maxgreenMana" [(ngModel)]="query.maxGreenMana"/>
 
-  <label for="redMana">Red mana : </label>
-  <input type="number" id="redMana" [(ngModel)]="query.redMana"/>
+  <label for="minwhiteMana">Min White mana : </label>
+  <input type="number" id="minwhiteMana" [(ngModel)]="query.minWhiteMana"/>
 
-  <label for="neutralMana">Neutral mana : </label>
-  <input type="number" id="neutralMana" [(ngModel)]="query.neutralMana"/>
+  <label for="maxwhiteMana">Max White mana : </label>
+  <input type="number" id="maxwhiteMana" [(ngModel)]="query.maxWhiteMana"/>
+
+  <label for="minblackMana">Min Black mana : </label>
+  <input type="number" id="minblackMana" [(ngModel)]="query.minBlackMana"/>
+
+  <label for="maxblackMana">Max Black mana : </label>
+  <input type="number" id="maxblackMana" [(ngModel)]="query.maxBlackMana"/>
+
+  <label for="minredMana">Min Red mana : </label>
+  <input type="number" id="minredMana" [(ngModel)]="query.minRedMana"/>
+
+  <label for="maxredMana">Max Red mana : </label>
+  <input type="number" id="maxredMana" [(ngModel)]="query.maxRedMana"/>
+
+  <label for="minneutralMana">Min Neutral mana : </label>
+  <input type="number" id="minneutralMana" [(ngModel)]="query.minNeutralMana"/>
+
+  <label for="maxneutralMana">Max Neutral mana : </label>
+  <input type="number" id="maxneutralMana" [(ngModel)]="query.maxNeutralMana"/>
 
   <label for="levelCard">Level card : </label>
   <input type="number" id="levelCard" [(ngModel)]="query.levelCard"/>
@@ -47,7 +65,7 @@
   <span *ngIf="results.length == 0">No result !!!</span>
 </div>
 <div *ngFor="let result of results">
-  <a href="./card/{{result.id}}">
+  <a href="./admin/card/{{result.id}}">
   {{result.title}}
   <img src="{{result.urlImage}}"/>
 </a>

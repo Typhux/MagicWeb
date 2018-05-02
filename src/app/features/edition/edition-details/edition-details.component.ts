@@ -30,7 +30,7 @@ export class EditionDetailsComponent implements OnInit {
     deleteEdition() {
       if (confirm('Are you sure to delete this edition ?')) {
         this.editionService.deleteEdition(this.id).subscribe(response => {
-        this.router.navigateByUrl('edition');
+        this.router.navigateByUrl('admin/edition');
         });
     }
     }

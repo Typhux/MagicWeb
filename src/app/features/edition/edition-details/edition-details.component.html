@@ -2,10 +2,10 @@
   <h1>{{edition.title}}</h1>
   <img src="{{edition.urlLogo}}"/>
 
-  <a href="card/new/{{edition.id}}">Add Card</a>
+  <a href="./admin/card/new/{{edition.id}}">Add Card</a>
 
   <div *ngFor="let card of edition.cards">
-    <a href="card/{{card.id}}">
+    <a href="./admin/card/{{card.id}}">
     {{card.title}}
     <img src="{{card.urlImage}}"/>
     </a>

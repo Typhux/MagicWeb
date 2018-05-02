@@ -46,7 +46,7 @@ export class CardDetailsComponent implements OnInit {
     deleteCard() {
       if (confirm('Are you to delete this Card ?')) {
         this.cardService.deleteCard(this.id).subscribe(response => {
-          this.router.navigateByUrl('card');
+          this.router.navigateByUrl('admin/card');
       });
     }
     }
