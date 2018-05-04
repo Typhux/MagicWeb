@@ -15,6 +15,10 @@ import { CardDetailsComponent } from './features/card/card-details/card-details.
 import { SearchService } from './features/search/search.service';
 import { CardService } from './features/card/card.service';
 import { EditionService } from './features/edition/edition.service';
+import { EmulatorComponent } from './features/emulator/emulator.component';
+import { SimulatorComponent } from './features/emulator/simulator/simulator.component';
+import { LogBattleComponent } from './features/emulator/log-battle/log-battle.component';
+import { EmulatorService } from './features/emulator/emulator.service';
 
 const appRoutes: Routes = [
   { path: 'admin/edition', component: EditionComponent},
@@ -25,6 +29,7 @@ const appRoutes: Routes = [
   {  path: 'admin/card/update/:cardId', component: NewCardComponent},
   {  path: 'admin/card/new', component: NewCardComponent},
   {  path: 'admin/search', component: SearchComponent},
+  {  path: 'admin/emulator', component: EmulatorComponent},
   {  path: 'admin/card/:id', component: CardDetailsComponent},
 ];
 
@@ -37,7 +42,10 @@ const appRoutes: Routes = [
     EditionDetailsComponent,
     NewCardComponent,
     CardDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    EmulatorComponent,
+    SimulatorComponent,
+    LogBattleComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,8 @@ const appRoutes: Routes = [
   providers: [
     EditionService,
     CardService,
-    SearchService
+    SearchService,
+    EmulatorService
   ],
   bootstrap: [AppComponent]
 })

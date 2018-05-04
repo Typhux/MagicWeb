@@ -1,0 +1,7 @@
+<div *ngIf="card">
+  <h1>{{card.title}}</h1>
+  {{card.mechanic}}
+  <h1 *ngIf="round != 0">Round {{round}}</h1>
+  <app-log-battle [log]="log"></app-log-battle>
+</div>
+

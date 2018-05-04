@@ -11,4 +11,8 @@ export class SearchService {
   executeQuery(query: QueryCard) {
     return this.http.post('/api/search/', query);
   }
+
+  getCardByCodeName(query: string) {
+    return this.http.get('/api/search/' + query);
+  }
 }
