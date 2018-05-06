@@ -19,6 +19,7 @@ import { EmulatorComponent } from './features/emulator/emulator.component';
 import { SimulatorComponent } from './features/emulator/simulator/simulator.component';
 import { LogBattleComponent } from './features/emulator/log-battle/log-battle.component';
 import { EmulatorService } from './features/emulator/emulator.service';
+import { TreatmentComponent } from './features/treatment/treatment.component';
 
 const appRoutes: Routes = [
   { path: 'admin/edition', component: EditionComponent},
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     SearchComponent,
     EmulatorComponent,
     SimulatorComponent,
-    LogBattleComponent
+    LogBattleComponent,
+    TreatmentComponent
   ],
   imports: [
     BrowserModule,
