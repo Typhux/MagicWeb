@@ -20,6 +20,8 @@ import { SimulatorComponent } from './features/emulator/simulator/simulator.comp
 import { LogBattleComponent } from './features/emulator/log-battle/log-battle.component';
 import { EmulatorService } from './features/emulator/emulator.service';
 import { TreatmentComponent } from './features/treatment/treatment.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './layout/header/header.component';
 
 const appRoutes: Routes = [
   { path: 'admin/edition', component: EditionComponent},
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     EmulatorComponent,
     SimulatorComponent,
     LogBattleComponent,
-    TreatmentComponent
+    TreatmentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ const appRoutes: Routes = [
      RouterModule.forRoot(
       appRoutes,
     ),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [
     EditionService,
